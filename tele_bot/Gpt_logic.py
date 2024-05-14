@@ -44,7 +44,7 @@ class GP_Generate:
         Returns:
             str: The generated text containing answers to user queries.
         """
-        message = "REWRITE THE ARTICLE IN AN ELEGANT WAY.The total word count of the article should be 1100 words. Please include a seperate section called THE GOOD THE BAD THE GIST,each section with a word count of 200."
+        message = "WRITE A NEWS ARTICLE USING THE DATA I GAVE YOU in 1100 words include a seperate section called THE GOOD THE BAD THE GIST,each section with a word count of 200."
         query = "\nNew query: " + message
         self.conversation_history.append({"role": "user", "content": message})  # Add user query to conversation history
         context = [{"role": "system", "content": query}]
