@@ -19,8 +19,9 @@ def scrape_website(url):
             cleaned_text = re.sub(r'\s+', ' ', text_content)
 
             # Save the cleaned text to a text file
-            with open('website_content.txt', 'w', encoding='utf-8') as file:
+            with open('website_content.txt', 'w', encoding='utf-8') as file, open('content.txt', 'w') as content:
                 file.write(cleaned_text)
+                content.write(cleaned_text)
 
             print(f'Successfully scraped the website and saved content to website_content.txt')
         else:
@@ -29,5 +30,5 @@ def scrape_website(url):
         print(f'An error occurred: {str(e)}')
 
 # Example usage:
-#url = input('Enter the URL of the website you want to scrape: ')
-#scrape_website(url)
+# url = input('Enter the URL of the website you want to scrape: ')
+# scrape_website(url)

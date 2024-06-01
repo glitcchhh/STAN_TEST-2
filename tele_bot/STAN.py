@@ -2,7 +2,7 @@
 from Gpt_logic import GP_Generate
 from webScrap import scrape_website
 
-GPT_API_KEY = "API KEY"
+GPT_API_KEY = "YOUR KEY"
 
 gpt = GP_Generate(api_key=GPT_API_KEY)
 

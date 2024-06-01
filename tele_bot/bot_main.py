@@ -4,7 +4,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from STAN import STAN
 
 # Define bot token and username
-TOKEN: Final = "BOT TOKEN"
+TOKEN: Final = "YOUR KEY"
 BOT_USERNAME: Final = "@trendy_reporter_bot"
 
 class TrendyBot:
@@ -49,8 +49,9 @@ Let's explore the trends together! 📈
             url = context.args[0]  # Extract the first argument as the URL
             s = STAN(query=url)  # Instantiate STAN class with the URL as the query
             file_name = s.do_magic()  # Perform website scraping
-            print(file_name)
-            await update.message.reply_document(document=open(file_name, "rb"))
+            
+            await update.message.reply_document(document=open('content.txt', 'rb'), caption="content of website", filename="website content")
+            await update.message.reply_document(document=open(file_name, "rb"), filename="Article", caption="gpt file")
         else:
             await update.message.reply_text("Please provide a URL after the /analyze command.")
 
