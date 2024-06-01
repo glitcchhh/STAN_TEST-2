@@ -48,7 +48,7 @@ Let's explore the trends together! 📈
         if len(context.args) > 0:
             url = context.args[0]  # Extract the first argument as the URL
             s = STAN(query=url)  # Instantiate STAN class with the URL as the query
-            file_name = s.do_magic()  # Perform website scraping
+            file_name = s.do_magic(url=url)  # Perform website scraping
             
             await update.message.reply_document(document=open('content.txt', 'rb'), caption="content of website", filename="website content")
             await update.message.reply_document(document=open(file_name, "rb"), filename="Article", caption="gpt file")
