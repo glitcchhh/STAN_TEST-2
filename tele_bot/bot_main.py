@@ -4,7 +4,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from STAN import STAN
 
 # Define bot token and username
-TOKEN: Final = "YOUR KEY"
+TOKEN: Final = "Token"
 BOT_USERNAME: Final = "@trendy_reporter_bot"
 
 class TrendyBot:

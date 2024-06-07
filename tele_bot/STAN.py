@@ -1,16 +1,13 @@
-
 from Gpt_logic import GP_Generate
 import requests
 from bs4 import BeautifulSoup
 import re
 
-GPT_API_KEY = "YOUR KEY"
+GPT_API_KEY = "API KEY"
 
 gpt = GP_Generate(api_key=GPT_API_KEY)
 
-
 class STAN:
-
     def __init__(self, query) -> None:
         self.query = query
     
@@ -44,9 +41,8 @@ class STAN:
     def do_magic(self, url):
         self.scrape_website(url)
         text_file_path = "website_content.txt" # Replace with the path to your text file
-        gpt.add_text_file_to_history(text_file_path)
-        final_article = gpt.ask()
-        with open("website_content.txt", "w") as file:
+        final_article = gpt.ask(text_file_path)
+        with open("website_content.txt", "w", encoding="utf-8") as file:
             file.write(final_article)
 
         return text_file_path
